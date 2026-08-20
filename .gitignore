@@ -1,0 +1,49 @@
+# Swift Package Manager build output
+.build/
+Packages/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.playground/timeline.xctimeline
+*.playground/xcshareddata/
+
+# SwiftPM local state
+.swiftpm/
+Package.resolved
+
+# Xcode
+DerivedData/
+build/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# JetBrains / PyCharm (this project was scaffolded in PyCharm originally)
+.idea/
+
+# Session / local-only tooling
+.remember/
+memory/
+.claude/
+
+# Python leftovers from initial scaffold — safety net
+__pycache__/
+*.pyc
+.venv/
+venv/
+main.py
