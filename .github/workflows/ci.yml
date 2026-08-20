@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Build and test
+    runs-on: macos-14
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Show Swift version
+        run: swift --version
+
+      - name: Build DuplicateFinderCore
+        run: swift build --product DuplicateFinderCore
+
+      - name: Build dupefind CLI
+        run: swift build --product dupefind
+
+      - name: Run unit tests
+        run: swift test --enable-code-coverage
+
+      - name: Verify CLI end-to-end
+        run: ./scripts/verify.sh
+
+  build-mac-app:
+    name: Build macOS app
+    runs-on: macos-14
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Build .app bundle
+        run: ./scripts/build-app.sh release
+
+      - name: Confirm app bundle exists
+        run: |
+          test -d .build/release/DuplicateFinder.app
+          echo "OK: DuplicateFinder.app built"

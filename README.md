@@ -146,3 +146,7 @@ swift test
 - ✅ iOS/iPadOS app with PhotoKit + Files picker
 - ⏭ Perceptual hash (pHash) for near-duplicate photos (resized, re-encoded)
 - ⏭ Live Photos and burst-mode awareness (group instead of dedupe)
+
+## License
+
+Licensed under the [Apache License, Version 2.0](LICENSE).
